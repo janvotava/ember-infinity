@@ -187,7 +187,7 @@ export default Service.extend({
         } else if (increment == 1) {
           // if list still needs to populate the screen only if we are loading the next page (not previous pages)
           let infinityLoaderElem = document.querySelector('.infinity-loader');
-          if (infinityLoaderElem && this._viewportHeight(infinityModel) > infinityLoaderElem.offsetTop) {
+          if (infinityLoaderElem && this._viewportHeight(infinityModel) > infinityLoaderElem.getBoundingClientRect().top) {
             // load again
             this.loadNextPage(infinityModel, increment);
           }
